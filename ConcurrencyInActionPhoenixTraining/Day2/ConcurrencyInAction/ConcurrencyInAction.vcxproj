@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EF81166E-5E5A-431F-9075-E45CF29A340A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ConcurrencyInAction</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ch.2 Managing threads\HelloWorld.h" />
+    <ClInclude Include="Ch.2 Managing threads\HelloWorldClass.h" />
+    <ClInclude Include="Ch.2 Managing threads\JoinAllCases.h" />
+    <ClInclude Include="Ch.2 Managing threads\PassingArguments.h" />
+    <ClInclude Include="Ch.2 Managing threads\ScopedThread.h" />
+    <ClInclude Include="Ch.2 Managing threads\TransferringThreads.h" />
+    <ClInclude Include="Ch.3 Sharing data between threads\Deadlock.h" />
+    <ClInclude Include="Ch.3 Sharing data between threads\LockHierarchy.h" />
+    <ClInclude Include="Ch.3 Sharing data between threads\Mutex_1.h" />
+    <ClInclude Include="Ch.3 Sharing data between threads\OnceFlag.h" />
+    <ClInclude Include="Ch.3 Sharing data between threads\ProducerConsumer.h" />
+    <ClInclude Include="Ch.3 Sharing data between threads\ThreadSafeStack.h" />
+    <ClInclude Include="Ch.3 Sharing data between threads\UniqueLock.h" />
+    <ClInclude Include="Ch.4 Synchronizing concurrent operations\1_ConditionVariable.h" />
+    <ClInclude Include="Ch.4 Synchronizing concurrent operations\2_ThreadsafeQueue.h" />
+    <ClInclude Include="Ch.4 Synchronizing concurrent operations\3_Future.h" />
+    <ClInclude Include="Ch.4 Synchronizing concurrent operations\4_PackageTask.h" />
+    <ClInclude Include="Ch.4 Synchronizing concurrent operations\5_Promise.h" />
+    <ClInclude Include="Ch.4 Synchronizing concurrent operations\6_SharedFuture.h" />
+    <ClInclude Include="Ch.5 Memory model and atomic types\AtomicTypes.h" />
+    <ClInclude Include="Ch.6 Lock-based data structures\ThreadSafeList.h" />
+    <ClInclude Include="Ch.6 Lock-based data structures\ThreadSafeLookupTable.h" />
+    <ClInclude Include="Ch.6 Lock-based data structures\ThreadSafeQueue.h" />
+    <ClInclude Include="Ch.6 Lock-based data structures\ThreadSafeStack.h" />
+    <ClInclude Include="Ch.8 Designing concurrent code\DebuggingThreads.h" />
+    <ClInclude Include="Ch.8 Designing concurrent code\ParallelFind.h" />
+    <ClInclude Include="Ch.8 Designing concurrent code\ParallelForEach.h" />
+    <ClInclude Include="Ch.8 Designing concurrent code\ParallelQuickSort.h" />
+    <ClInclude Include="Ch.8 Designing concurrent code\ProducerConsumer.h" />
+    <ClInclude Include="Ch.8 Designing concurrent code\Semaphore.h" />
+    <ClInclude Include="Ch.8 Designing concurrent code\ThreadSafeStack.h" />
+    <ClInclude Include="ITest.h" />
+    <ClInclude Include="samples\1.ManagingThreads\2.HelloWorldClass.h" />
+    <ClInclude Include="samples\1.ManagingThreads\4.PassingArguments.h" />
+    <ClInclude Include="samples\1.ManagingThreads\5_1.ScopedThread.h" />
+    <ClInclude Include="samples\1.ManagingThreads\6.MultipleThreads.h" />
+    <ClInclude Include="samples\2.SharingData\1.Mutex.h" />
+    <ClInclude Include="samples\2.SharingData\10.AtomicTypes.h" />
+    <ClInclude Include="samples\2.SharingData\2.ProducerConsumer.h" />
+    <ClInclude Include="samples\2.SharingData\3.ThreadSafeStack.h" />
+    <ClInclude Include="samples\2.SharingData\4.Deadlock.h" />
+    <ClInclude Include="samples\2.SharingData\5.LockHierarchy.h" />
+    <ClInclude Include="samples\2.SharingData\6.UniqueLock.h" />
+    <ClInclude Include="samples\2.SharingData\7.OnceFlag.h" />
+    <ClInclude Include="samples\2.SharingData\8.StaticThreadSafe.h" />
+    <ClInclude Include="samples\2.SharingData\9.Semaphore.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="samples\1.ManagingThreads\1.HelloWorld.h" />
+    <None Include="samples\1.ManagingThreads\3.HandleJoinCases.h" />
+    <None Include="samples\1.ManagingThreads\5.TransferingOwnership.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

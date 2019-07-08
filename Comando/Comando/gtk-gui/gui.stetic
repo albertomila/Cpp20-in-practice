@@ -1,0 +1,1042 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Release/Comando.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="Comando.MainWindow" design-size="1356 750">
+    <action-group name="Default">
+      <action id="preferencesAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Tools</property>
+        <property name="ShortLabel" translatable="yes">Tools</property>
+        <property name="StockId">gtk-preferences</property>
+      </action>
+      <action id="executeAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Configuration</property>
+        <property name="ShortLabel" translatable="yes">Configuration</property>
+        <property name="StockId">gtk-execute</property>
+        <property name="Visible">False</property>
+        <signal name="Activated" handler="OnMenuConfigurationButtonPress" />
+      </action>
+      <action id="networkAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Add host target</property>
+        <property name="ShortLabel" translatable="yes">Add host target</property>
+        <property name="StockId">gtk-network</property>
+        <signal name="Activated" handler="OnMenuAddHostTargetButtonPress" />
+      </action>
+      <action id="saveAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Save</property>
+        <property name="ShortLabel" translatable="yes">Save</property>
+        <property name="StockId">gtk-save</property>
+        <signal name="Activated" handler="OnMenuSaveButtonClick" />
+      </action>
+      <action id="goForwardAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Export commands</property>
+        <property name="ShortLabel" translatable="yes">Export commands</property>
+        <property name="StockId">gtk-go-forward</property>
+        <signal name="Activated" handler="OnExportCommandsButtonPress" />
+      </action>
+      <action id="goBackAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Import commands</property>
+        <property name="ShortLabel" translatable="yes">Import commands</property>
+        <property name="StockId">gtk-go-back</property>
+        <signal name="Activated" handler="OnImportCommandsButtonPress" />
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Events">ButtonPressMask</property>
+    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar1">
+            <property name="MemberName" />
+            <node name="menubar1" type="Menubar">
+              <node type="Menu" action="preferencesAction">
+                <node type="Menuitem" action="executeAction" />
+                <node type="Menuitem" action="networkAction" />
+                <node type="Menuitem" action="goForwardAction" />
+                <node type="Menuitem" action="goBackAction" />
+                <node type="Menuitem" action="saveAction" />
+              </node>
+            </node>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox1">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Notebook" id="notebook1">
+                <property name="MemberName" />
+                <property name="WidthRequest">850</property>
+                <property name="CanFocus">True</property>
+                <property name="CurrentPage">0</property>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Comando.WidgetConsole" id="_widgetconsole">
+                <property name="MemberName" />
+                <property name="WidthRequest">500</property>
+                <property name="Events">ButtonPressMask</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Comando.WindowConfiguration" design-size="311 267">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">WindowConfiguration</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed2">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Entry" id="_inputPort">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">131</property>
+            <property name="Y">7</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_inputService">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">131</property>
+            <property name="Y">39</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_inputTarget">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">132</property>
+            <property name="Y">70</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_inputTargetCommand">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">131</property>
+            <property name="Y">102</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelTargetCommand">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Target command</property>
+          </widget>
+          <packing>
+            <property name="X">31</property>
+            <property name="Y">107</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelTarget">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Target</property>
+          </widget>
+          <packing>
+            <property name="X">31</property>
+            <property name="Y">75</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelService">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Service</property>
+          </widget>
+          <packing>
+            <property name="X">31</property>
+            <property name="Y">43</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelPort">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Port</property>
+          </widget>
+          <packing>
+            <property name="X">31</property>
+            <property name="Y">13</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="_buttonAccept">
+            <property name="MemberName" />
+            <property name="WidthRequest">150</property>
+            <property name="HeightRequest">40</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Accept</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnWindowAcceptButtonPressed" />
+          </widget>
+          <packing>
+            <property name="X">29</property>
+            <property name="Y">183</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_defaultIP">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">131</property>
+            <property name="Y">133</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelDefaultIP">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Default IP</property>
+          </widget>
+          <packing>
+            <property name="X">32</property>
+            <property name="Y">138</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Comando.WindowAddExposedCommand" design-size="443 199">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">WindowAddExposedCommand</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed4">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="_labelTittle">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">New command</property>
+          </widget>
+          <packing>
+            <property name="X">8</property>
+            <property name="Y">7</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_inputCommand">
+            <property name="MemberName" />
+            <property name="WidthRequest">200</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">175</property>
+            <property name="Y">76</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_inputTittle">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">10</property>
+            <property name="Y">76</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelCommand">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Command</property>
+          </widget>
+          <packing>
+            <property name="X">177</property>
+            <property name="Y">52</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelCommandTittle1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Tittle</property>
+          </widget>
+          <packing>
+            <property name="X">14</property>
+            <property name="Y">52</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="_buttonAccept">
+            <property name="MemberName" />
+            <property name="WidthRequest">150</property>
+            <property name="HeightRequest">40</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Accept</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnAddNewCommandButtonClick" />
+          </widget>
+          <packing>
+            <property name="X">13</property>
+            <property name="Y">110</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="_commandPickerButton">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextAndIcon</property>
+            <property name="Icon">stock:gtk-find Button</property>
+            <property name="Label" translatable="yes" />
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnCommandPickerButtonClick" />
+          </widget>
+          <packing>
+            <property name="X">375</property>
+            <property name="Y">67</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Comando.WindowAddSingleCommand" design-size="616 199">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">WindowAddSingleCommand</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed4">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="_labelTittle">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">New command</property>
+          </widget>
+          <packing>
+            <property name="X">8</property>
+            <property name="Y">7</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_inputCommand">
+            <property name="MemberName" />
+            <property name="WidthRequest">200</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">175</property>
+            <property name="Y">76</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelArguments">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Arguments</property>
+          </widget>
+          <packing>
+            <property name="X">431</property>
+            <property name="Y">52</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_inputArguments">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">427</property>
+            <property name="Y">76</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_inputTittle">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">10</property>
+            <property name="Y">76</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelCommand">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Command</property>
+          </widget>
+          <packing>
+            <property name="X">177</property>
+            <property name="Y">52</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelCommandTittle1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Tittle</property>
+          </widget>
+          <packing>
+            <property name="X">14</property>
+            <property name="Y">52</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="_buttonAccept">
+            <property name="MemberName" />
+            <property name="WidthRequest">150</property>
+            <property name="HeightRequest">40</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Accept</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnAddNewCommandButtonClick" />
+          </widget>
+          <packing>
+            <property name="X">13</property>
+            <property name="Y">110</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="_commandPickerButton">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextAndIcon</property>
+            <property name="Icon">stock:gtk-find Button</property>
+            <property name="Label" translatable="yes" />
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnPickCommandButtonClick" />
+          </widget>
+          <packing>
+            <property name="X">375</property>
+            <property name="Y">67</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Comando.WindowNewSection" design-size="320 132">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">WindowNewSection</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Section name</property>
+          </widget>
+          <packing>
+            <property name="X">5</property>
+            <property name="Y">3</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="_buttonAccept">
+            <property name="MemberName" />
+            <property name="WidthRequest">100</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Accept</property>
+            <property name="UseUnderline">True</property>
+            <signal name="ButtonReleaseEvent" handler="OnAddNewSectionButtonPress" />
+          </widget>
+          <packing>
+            <property name="X">6</property>
+            <property name="Y">56</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_inputName">
+            <property name="MemberName" />
+            <property name="WidthRequest">300</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">5</property>
+            <property name="Y">25</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Comando.WindowAddSequenceCommand" design-size="534 387">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">WindowAddSequenceCommand</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed4">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="_labelTittle">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">New sequence command</property>
+          </widget>
+          <packing>
+            <property name="X">8</property>
+            <property name="Y">7</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelCommandTittle1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Tittle</property>
+          </widget>
+          <packing>
+            <property name="X">10</property>
+            <property name="Y">30</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_inputTitle">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">7</property>
+            <property name="Y">46</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="_buttonAccept">
+            <property name="MemberName" />
+            <property name="WidthRequest">150</property>
+            <property name="HeightRequest">40</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Accept</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnAddNewSequenceCommandButtonClick" />
+          </widget>
+          <packing>
+            <property name="X">8</property>
+            <property name="Y">309</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelCommand">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Command</property>
+          </widget>
+          <packing>
+            <property name="X">26</property>
+            <property name="Y">78</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelArguments">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Arguments</property>
+          </widget>
+          <packing>
+            <property name="X">272</property>
+            <property name="Y">75</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="WidthRequest">500</property>
+            <property name="HeightRequest">200</property>
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.Viewport" id="GtkViewport">
+                <property name="MemberName" />
+                <property name="ShadowType">None</property>
+                <child>
+                  <widget class="Gtk.Fixed" id="_inputContainer">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">450</property>
+                    <property name="HeightRequest">100</property>
+                    <property name="ShowScrollbars">True</property>
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Button" id="_buttonAddEntry">
+                        <property name="MemberName" />
+                        <property name="CanFocus">True</property>
+                        <property name="Type">TextAndIcon</property>
+                        <property name="Icon">stock:gtk-add Menu</property>
+                        <property name="Label" translatable="yes" />
+                        <signal name="Clicked" handler="OnAddEntryButtonPress" />
+                      </widget>
+                      <packing>
+                        <property name="X">8</property>
+                        <property name="Y">6</property>
+                      </packing>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">12</property>
+            <property name="Y">102</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Comando.WindowPrompt" design-size="322 104">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">WindowPrompt</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed3">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="_description">
+            <property name="MemberName" />
+            <property name="WidthRequest">300</property>
+            <property name="HeightRequest">60</property>
+            <property name="Yalign">0</property>
+            <property name="LabelProp" translatable="yes">label3</property>
+            <property name="Wrap">True</property>
+          </widget>
+          <packing>
+            <property name="X">2</property>
+            <property name="Y">3</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="_buttonAccept">
+            <property name="MemberName" />
+            <property name="WidthRequest">80</property>
+            <property name="HeightRequest">30</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Accept</property>
+            <property name="UseUnderline">True</property>
+            <signal name="ButtonReleaseEvent" handler="OnAcceptButtonPress" />
+          </widget>
+          <packing>
+            <property name="X">4</property>
+            <property name="Y">53</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="_buttonCancel">
+            <property name="MemberName" />
+            <property name="WidthRequest">80</property>
+            <property name="HeightRequest">30</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Cancel</property>
+            <property name="UseUnderline">True</property>
+            <signal name="ButtonReleaseEvent" handler="OnCancelButtonPress" />
+          </widget>
+          <packing>
+            <property name="X">88</property>
+            <property name="Y">53</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Bin" id="Comando.WidgetSequenceCommandEntry" design-size="488 51">
+    <property name="MemberName" />
+    <property name="Visible">False</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Entry" id="_inputCommand">
+            <property name="MemberName" />
+            <property name="WidthRequest">200</property>
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes"> </property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button1">
+            <property name="MemberName" />
+            <property name="HeightRequest">25</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextAndIcon</property>
+            <property name="Icon">stock:gtk-cancel Menu</property>
+            <property name="Label" translatable="yes" />
+            <signal name="Clicked" handler="OnDeleteEntryButtonClick" />
+          </widget>
+          <packing>
+            <property name="X">450</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="_commandPickerButton">
+            <property name="MemberName" />
+            <property name="WidthRequest">30</property>
+            <property name="HeightRequest">25</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextAndIcon</property>
+            <property name="Icon">stock:gtk-find Button</property>
+            <property name="Label" translatable="yes" />
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnCommandPickerButtonClick" />
+          </widget>
+          <packing>
+            <property name="X">202</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_inputArguments">
+            <property name="MemberName" />
+            <property name="WidthRequest">150</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">250</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Bin" id="Comando.WidgetHostTargetEntry" design-size="452 35">
+    <property name="MemberName" />
+    <child>
+      <widget class="Gtk.Fixed" id="fixed3">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Entry" id="_inputHostTarget">
+            <property name="MemberName" />
+            <property name="WidthRequest">250</property>
+            <property name="HeightRequest">27</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="_buttonRemove">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextAndIcon</property>
+            <property name="Icon">stock:gtk-cancel Menu</property>
+            <property name="Label" translatable="yes" />
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnRemoveHostTargetButtonPress" />
+          </widget>
+          <packing>
+            <property name="X">250</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button1">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextAndIcon</property>
+            <property name="Icon">stock:gtk-refresh Menu</property>
+            <property name="Label" translatable="yes" />
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnUpdateConnectionButtonPress" />
+          </widget>
+          <packing>
+            <property name="X">275</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="_labelConnectionStatus">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Not connected</property>
+          </widget>
+          <packing>
+            <property name="X">312</property>
+            <property name="Y">5</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Comando.WindowHostTargets" design-size="500 241">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">WindowHostTargets</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed4">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Button" id="_buttonAccept">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Accept</property>
+            <property name="UseUnderline">True</property>
+            <signal name="ButtonPressEvent" handler="OnAddHostTargetsButtonPress" />
+          </widget>
+          <packing>
+            <property name="X">6</property>
+            <property name="Y">208</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="WidthRequest">500</property>
+            <property name="HeightRequest">200</property>
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.Viewport" id="GtkViewport">
+                <property name="MemberName" />
+                <property name="ShadowType">None</property>
+                <child>
+                  <widget class="Gtk.Fixed" id="_hostTargetsCanvas">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">300</property>
+                    <property name="HeightRequest">150</property>
+                    <property name="ShowScrollbars">True</property>
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Button" id="_buttonAddhostEntry">
+                        <property name="MemberName" />
+                        <property name="CanFocus">True</property>
+                        <property name="Type">TextAndIcon</property>
+                        <property name="Icon">stock:gtk-add Button</property>
+                        <property name="Label" translatable="yes" />
+                        <signal name="ButtonPressEvent" handler="OnAddHostButtonPress" />
+                      </widget>
+                      <packing>
+                        <property name="X">35</property>
+                        <property name="Y">67</property>
+                      </packing>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+          </widget>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Bin" id="Comando.WidgetConsole" design-size="517 616">
+    <property name="MemberName" />
+    <property name="WidthRequest">500</property>
+    <property name="Visible">False</property>
+    <child>
+      <widget class="Gtk.VBox" id="vbox2">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="Xalign">0</property>
+            <property name="Yalign">0</property>
+            <property name="LabelProp" translatable="yes">Output</property>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow1">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TextView" id="_textfieldOutput">
+                <property name="MemberName" />
+                <property name="WidthRequest">300</property>
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="Editable">False</property>
+                <property name="CursorVisible">False</property>
+                <property name="AcceptsTab">False</property>
+                <property name="Text" translatable="yes" />
+                <property name="WrapMode">Word</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="_inputGenericCommand">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Comando.WindowAddTab" design-size="220 136">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">WindowAddTab</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Entry" id="_inputName">
+            <property name="MemberName" />
+            <property name="WidthRequest">200</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">5</property>
+            <property name="Y">40</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Tab name</property>
+          </widget>
+          <packing>
+            <property name="X">8</property>
+            <property name="Y">19</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="_buttonAccept">
+            <property name="MemberName" />
+            <property name="WidthRequest">100</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Accept</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnAcceptButtonClick" />
+          </widget>
+          <packing>
+            <property name="X">7</property>
+            <property name="Y">72</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Comando.WindowCommandList" design-size="800 600">
+    <property name="MemberName" />
+    <property name="WidthRequest">800</property>
+    <property name="HeightRequest">600</property>
+    <property name="Title" translatable="yes">WindowCommandList</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+        <property name="MemberName" />
+        <property name="ShadowType">In</property>
+        <child>
+          <widget class="Gtk.TreeView" id="_commandsTree">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="ShowScrollbars">True</property>
+          </widget>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Comando.WindowCommandsTooltip" design-size="223 99">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes" />
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Resizable">False</property>
+    <property name="AllowGrow">False</property>
+    <property name="Decorated">False</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="CommandText">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">label1</property>
+          </widget>
+          <packing>
+            <property name="Y">7</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>

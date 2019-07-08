@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{CF0E3095-E6AA-4C87-8342-3273A978FDE5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Utils</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ITest.h" />
+    <ClInclude Include="samples\ClassUtls\crc.h" />
+    <ClInclude Include="samples\ClassUtls\EventArgs.h" />
+    <ClInclude Include="samples\ClassUtls\EventHandler.h" />
+    <ClInclude Include="samples\ClassUtls\Incopiable.h" />
+    <ClInclude Include="samples\ClassUtls\Singleton.h" />
+    <ClInclude Include="samples\ClassUtls\StringUtils.h" />
+    <ClInclude Include="samples\ClassUtls\Thread.h" />
+    <ClInclude Include="samples\ClassUtls\xtring.h" />
+    <ClInclude Include="samples\Divers\auto_ptr.h" />
+    <ClInclude Include="samples\Divers\binary.h" />
+    <ClInclude Include="samples\Divers\char_strings.h" />
+    <ClInclude Include="samples\Divers\contructor_desctructor.h" />
+    <ClInclude Include="samples\Divers\explicit.h" />
+    <ClInclude Include="samples\Divers\friend.h" />
+    <ClInclude Include="samples\Divers\generic_traits.h" />
+    <ClInclude Include="samples\Divers\generic_vector.h" />
+    <ClInclude Include="samples\Divers\reference_pointers.h" />
+    <ClInclude Include="samples\Divers\resize_vector.h" />
+    <ClInclude Include="samples\Divers\ReturnBuildDestroyFlow.h" />
+    <ClInclude Include="samples\Divers\shared_ptr.h" />
+    <ClInclude Include="samples\Divers\switch.h" />
+    <ClInclude Include="samples\Divers\test.h" />
+    <ClInclude Include="samples\Divers\union.h" />
+    <ClInclude Include="samples\Divers\unique_ptr.h" />
+    <ClInclude Include="samples\Divers\virtual.h" />
+    <ClInclude Include="samples\GenericProg\GenericFoncteurs.h" />
+    <ClInclude Include="samples\GenericProg\GenericVector.h" />
+    <ClInclude Include="samples\mentoring\AvoidNamespaceDependencies.h" />
+    <ClInclude Include="samples\mentoring\partial_template.h" />
+    <ClInclude Include="samples\mentoring\PointerToMethod.h" />
+    <ClInclude Include="samples\mentoring\VirtualConstructor.h" />
+    <ClInclude Include="samples\MetaProg\Equal.h" />
+    <ClInclude Include="samples\MetaProg\IsAbstract.h" />
+    <ClInclude Include="samples\MetaProg\LexicalCast.h" />
+    <ClInclude Include="samples\MetaProg\MidValue.h" />
+    <ClInclude Include="samples\MetaProg\TraitsLists.h" />
+    <ClInclude Include="samples\MetaProg\TraitsUtils.h" />
+    <ClInclude Include="samples\MetaProg\Types.h" />
+    <ClInclude Include="samples\mentoring\DisableDynamicCast.h" />
+    <ClInclude Include="samples\Misc\AddressOf.h" />
+    <ClInclude Include="samples\Misc\Dijkstra.h" />
+    <ClInclude Include="samples\Misc\NoSTLdebug.h" />
+    <ClInclude Include="samples\Misc\AStar.h" />
+    <ClInclude Include="samples\Misc\Test2.h" />
+    <ClInclude Include="samples\Misc\Test3.h" />
+    <ClInclude Include="samples\Misc\Test4.h" />
+    <ClInclude Include="samples\Misc\Test5.h" />
+    <ClInclude Include="samples\Misc\TestOmnidrone1.h" />
+    <ClInclude Include="samples\Misc\TestOmnidrone2.h" />
+    <ClInclude Include="samples\Misc\TestOmnidrone3.h" />
+    <ClInclude Include="samples\Misc\TestOmnidrone4.h" />
+    <ClInclude Include="samples\Misc\TestOmnidrone5.h" />
+    <ClInclude Include="samples\Misc\TestOmnidrone6.h" />
+    <ClInclude Include="samples\Misc\VaridicMember.h" />
+    <ClInclude Include="samples\Misc\VirtualTable.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="samples\ClassUtls\EventHandler.cpp" />
+    <ClCompile Include="samples\ClassUtls\EventHandlerDemo.cpp" />
+    <ClCompile Include="samples\ClassUtls\Thread.cpp" />
+    <ClCompile Include="samples\ClassUtls\xtring.cpp" />
+    <ClCompile Include="samples\mentoring\AvoidNamespaceDependencies.cpp" />
+    <ClCompile Include="samples\mentoring\ReturnValueOptimization.h" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

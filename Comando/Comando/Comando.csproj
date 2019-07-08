@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{C8219378-4205-4C81-A3FF-2EE6F7CBCEB6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Comando</RootNamespace>
+    <AssemblyName>Comando</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>Comando.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gtk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Mono.Posix">
+      <HintPath>..\..\..\..\..\..\Program Files\Mono\lib\mono\2.0-api\Mono.Posix.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\FileOperationResult.cs" />
+    <Compile Include="Database\GamesConfigLoader.cs" />
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="App\MainWindow.cs" />
+    <Compile Include="gtk-gui\Comando.MainWindow.cs" />
+    <Compile Include="Libraries\SimpleJSON.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Database\ApplicationConfig.cs" />
+    <Compile Include="Database\ApplicationConfigLoader.cs" />
+    <Compile Include="Database\Config.cs" />
+    <Compile Include="Database\GameConfigDB.cs" />
+    <Compile Include="Database\GameConfigLoader.cs" />
+    <Compile Include="Systems\CommandsTable.cs" />
+    <Compile Include="UI\UITabPage.cs" />
+    <Compile Include="UI\UITabPageCreator.cs" />
+    <Compile Include="Utils\Callback.cs" />
+    <Compile Include="Utils\Messenger.cs" />
+    <Compile Include="Utils\Singleton.cs" />
+    <Compile Include="UI\UISection.cs" />
+    <Compile Include="Utils\UIUtils.cs" />
+    <Compile Include="UI\UICommandElement.cs" />
+    <Compile Include="UI\UICommandButton.cs" />
+    <Compile Include="UI\UICommandExposedArgument.cs" />
+    <Compile Include="UI\UICommandSequence.cs" />
+    <Compile Include="UI\Widgets\WidgetConsole.cs" />
+    <Compile Include="gtk-gui\Comando.WidgetConsole.cs" />
+    <Compile Include="UI\Widgets\WidgetHostTargetEntry.cs" />
+    <Compile Include="gtk-gui\Comando.WidgetHostTargetEntry.cs" />
+    <Compile Include="UI\Widgets\WidgetSequenceCommandEntry.cs" />
+    <Compile Include="gtk-gui\Comando.WidgetSequenceCommandEntry.cs" />
+    <Compile Include="UI\Windows\WindowAddExposedCommand.cs" />
+    <Compile Include="gtk-gui\Comando.WindowAddExposedCommand.cs" />
+    <Compile Include="UI\Windows\WindowAddSequenceCommand.cs" />
+    <Compile Include="gtk-gui\Comando.WindowAddSequenceCommand.cs" />
+    <Compile Include="UI\Windows\WindowAddSingleCommand.cs" />
+    <Compile Include="gtk-gui\Comando.WindowAddSingleCommand.cs" />
+    <Compile Include="UI\Windows\WindowAddTab.cs" />
+    <Compile Include="gtk-gui\Comando.WindowAddTab.cs" />
+    <Compile Include="UI\Windows\WindowConfiguration.cs" />
+    <Compile Include="gtk-gui\Comando.WindowConfiguration.cs" />
+    <Compile Include="UI\Windows\WindowHostTargets.cs" />
+    <Compile Include="gtk-gui\Comando.WindowHostTargets.cs" />
+    <Compile Include="UI\Windows\WindowNewSection.cs" />
+    <Compile Include="gtk-gui\Comando.WindowNewSection.cs" />
+    <Compile Include="UI\Windows\WindowPrompt.cs" />
+    <Compile Include="gtk-gui\Comando.WindowPrompt.cs" />
+    <Compile Include="App\MainApp.cs" />
+    <Compile Include="App\Program.cs" />
+    <Compile Include="Systems\DraggingController.cs" />
+    <Compile Include="Systems\HostsController.cs" />
+    <Compile Include="Systems\HostConnectionThread.cs" />
+    <Compile Include="Systems\HostStatus.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="UI\Windows\WindowCommandList.cs" />
+    <Compile Include="gtk-gui\Comando.WindowCommandList.cs" />
+    <Compile Include="UI\Windows\WindowCommandsTooltip.cs" />
+    <Compile Include="gtk-gui\Comando.WindowCommandsTooltip.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\application_config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

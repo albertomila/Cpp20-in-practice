@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<application_config port="8081" service="comandoapp" sendcommand="executecommand" consolecommand="executeconsolecommand" default_host="172.29.44.XX">
+    <host_targets>
+        <host_target target="localhost" />
+    </host_targets>
+</application_config>

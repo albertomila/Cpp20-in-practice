@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<commands name="Common" creationDate="1500647233">
+    <section tittle="Common">
+        <command type="0" tittle="Win level" command="cheat" arguments="what=win" />
+        <command type="0" tittle="Lose level" command="cheat" arguments="what=lose" />
+        <command type="1" tittle="Lives" command="lives" arguments="5" />
+        <command type="1" tittle="Progress" command="setprogression" arguments="1" />
+    </section>
+</commands>
