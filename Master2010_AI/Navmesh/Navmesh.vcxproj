@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EE344E9D-FB51-4833-9D49-3573C89B0C8E}</ProjectGuid>
+    <RootNamespace>Navmesh</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>./;$(IncludePath);$(DXSDK_DIR)Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>dxguid.lib;winmm.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories> $(LibraryPath);$(DXSDK_DIR)Lib\x86</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>./;$(IncludePath);$(DXSDK_DIR)Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>dxguid.lib;winmm.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories> $(LibraryPath);$(DXSDK_DIR)Lib\x86</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Algorithms\ASearchAlgorithm.cpp" />
+    <ClCompile Include="Algorithms\CSearchAStar.cpp" />
+    <ClCompile Include="Algorithms\CSearchBidirectional.cpp" />
+    <ClCompile Include="Algorithms\CSearchBreadFirst.cpp" />
+    <ClCompile Include="Algorithms\CSearchDeepFirst.cpp" />
+    <ClCompile Include="Algorithms\CSearchGreedy.cpp" />
+    <ClCompile Include="CNavmesh.cpp" />
+    <ClCompile Include="ComposeFloor.cpp" />
+    <ClCompile Include="Navmesh.cpp" />
+    <ClCompile Include="poly2tri\common\shapes.cc" />
+    <ClCompile Include="poly2tri\sweep\advancing_front.cc" />
+    <ClCompile Include="poly2tri\sweep\cdt.cc" />
+    <ClCompile Include="poly2tri\sweep\sweep.cc" />
+    <ClCompile Include="poly2tri\sweep\sweep_context.cc" />
+    <ClCompile Include="SelectItem.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureContainer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Algorithms\ASearchAlgorithm.h" />
+    <ClInclude Include="Algorithms\CSearchAStar.h" />
+    <ClInclude Include="Algorithms\CSearchBidirectional.h" />
+    <ClInclude Include="Algorithms\CSearchBreadFirst.h" />
+    <ClInclude Include="Algorithms\CSearchDeepFirst.h" />
+    <ClInclude Include="Algorithms\CSearchGreedy.h" />
+    <ClInclude Include="CNavmesh.h" />
+    <ClInclude Include="ComposeFloor.h" />
+    <ClInclude Include="CStructures.h" />
+    <ClInclude Include="Navmesh.h" />
+    <ClInclude Include="poly2tri\common\shapes.h" />
+    <ClInclude Include="poly2tri\common\utils.h" />
+    <ClInclude Include="poly2tri\poly2tri.h" />
+    <ClInclude Include="poly2tri\sweep\advancing_front.h" />
+    <ClInclude Include="poly2tri\sweep\cdt.h" />
+    <ClInclude Include="poly2tri\sweep\sweep.h" />
+    <ClInclude Include="poly2tri\sweep\sweep_context.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SelectItem.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureContainer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Resources\Navmesh.ico" />
+    <Image Include="Assets\Resources\small.ico" />
+    <Image Include="Assets\Textures\ground.png" />
+    <Image Include="Assets\Textures\info1.png" />
+    <Image Include="Assets\Textures\info2.png" />
+    <Image Include="Assets\Textures\interface.png" />
+    <Image Include="Assets\Textures\interface1.png" />
+    <Image Include="Assets\Textures\interface2.png" />
+    <Image Include="Assets\Textures\metal.png" />
+    <Image Include="Assets\Textures\metal2.png" />
+    <Image Include="Assets\Textures\metal3.png" />
+    <Image Include="Assets\Textures\obstacle_house1.png" />
+    <Image Include="Assets\Textures\obstacle_house2.png" />
+    <Image Include="Assets\Textures\obstacle_tree1.png" />
+    <Image Include="Assets\Textures\obstacle_tree2.png" />
+    <Image Include="Assets\Textures\power.png" />
+    <Image Include="Assets\Textures\reset.png" />
+    <Image Include="Assets\Textures\select_algorithm.png" />
+    <Image Include="Assets\Textures\zeldabase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Assets\Resources\Navmesh.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Assets\Resources\ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
